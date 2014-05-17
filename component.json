@@ -1,0 +1,15 @@
+{
+  "name": "noflo-framer",
+  "description": "Framer components for NoFlo.",
+  "author": "Paul Young <paulyoungonline@gmail.com>",
+  "repo": "paulyoung/noflo-framer",
+  "version": "0.1.0",
+  "keywords": [
+  ],
+  "dependencies": {
+    "noflo/noflo": "*"
+  },
+  "scripts": [
+    "index.js"
+  ]
+}
