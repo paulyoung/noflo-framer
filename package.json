@@ -18,7 +18,7 @@
     }
   ],
   "scripts": {
-    "test": "grunt test"
+    "test": "node_modules/.bin/grunt test"
   },
   "dependencies": {
     "noflo": "~0.5.0"
@@ -27,6 +27,7 @@
     "chai": "~1.5.0",
     "grunt": "~0.4.1",
     "grunt-cafe-mocha": "~0.1.2",
+    "grunt-cli": "~0.1.13",
     "grunt-coffeelint": "~0.0.6",
     "grunt-contrib-coffee": "~0.6.6",
     "grunt-contrib-uglify": "~0.2.0",
