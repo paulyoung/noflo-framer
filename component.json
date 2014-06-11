@@ -4,13 +4,21 @@
   "author": "Paul Young <paulyoungonline@gmail.com>",
   "repo": "paulyoung/noflo-framer",
   "version": "0.1.0",
-  "keywords": [
-  ],
+  "keywords": [],
   "dependencies": {
     "noflo/noflo": "*",
     "paulyoung/Framer": "component-json"
   },
   "scripts": [
-    "index.js"
-  ]
+    "index.js",
+    "components/CreateLayer.coffee"
+  ],
+  "json": [
+    "component.json"
+  ],
+  "noflo": {
+    "components": {
+      "CreateLayer": "components/CreateLayer.coffee"
+    }
+  }
 }

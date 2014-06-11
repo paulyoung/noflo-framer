@@ -36,5 +36,10 @@
     "grunt-noflo-manifest": "~0.1.2",
     "mocha": "~1.9.0"
   },
-  "keywords": []
+  "keywords": [],
+  "noflo": {
+    "components": {
+      "CreateLayer": "components/CreateLayer.coffee"
+    }
+  }
 }
