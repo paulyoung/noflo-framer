@@ -11,14 +11,16 @@
   },
   "scripts": [
     "index.js",
-    "components/CreateLayer.coffee"
+    "components/CreateLayer.coffee",
+    "components/SetLayerProperties.coffee"
   ],
   "json": [
     "component.json"
   ],
   "noflo": {
     "components": {
-      "CreateLayer": "components/CreateLayer.coffee"
+      "CreateLayer": "components/CreateLayer.coffee",
+      "SetLayerProperties": "components/SetLayerProperties.coffee"
     }
   }
 }

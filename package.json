@@ -39,7 +39,8 @@
   "keywords": [],
   "noflo": {
     "components": {
-      "CreateLayer": "components/CreateLayer.coffee"
+      "CreateLayer": "components/CreateLayer.coffee",
+      "SetLayerProperties": "components/SetLayerProperties.coffee"
     }
   }
 }
