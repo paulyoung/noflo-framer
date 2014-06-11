@@ -1,23 +1,40 @@
 noflo = require 'noflo'
-unless noflo.isBrowser()
-  chai = require 'chai' unless chai
-  CreateLayer = require '../components/CreateLayer.coffee'
-else
-  CreateLayer = require 'noflo-framer/components/CreateLayer.js'
+CreateLayer = require 'noflo-framer/components/CreateLayer.js'
+{expect} = chai
+
 
 describe 'CreateLayer component', ->
-  c = null
-  ins = null
-  out = null
-  beforeEach ->
-    c = CreateLayer.getComponent()
-    ins = noflo.internalSocket.createSocket()
-    out = noflo.internalSocket.createSocket()
-    c.inPorts.in.attach ins
-    c.outPorts.out.attach out
+  component = null
+  start = null
+  properties = null
+  layer = null
 
-  describe 'when instantiated', ->
-    it 'should have an input port', ->
-      chai.expect(c.inPorts.in).to.be.an 'object'
-    it 'should have an output port', ->
-      chai.expect(c.outPorts.out).to.be.an 'object'
+
+  beforeEach ->
+    component = CreateLayer.getComponent()
+
+    start = noflo.internalSocket.createSocket()
+    component.inPorts.start.attach start
+
+    layer = noflo.internalSocket.createSocket()
+    component.outPorts.layer.attach layer
+
+
+  describe 'creating a layer', ->
+    it 'should produce a new layer', (done) ->
+      layer.on 'data', (data) ->
+        expect(data).to.be.instanceof Layer
+        done()
+
+      start.send()
+
+    context 'with custom properties', ->
+      it 'should produce a new layer with custom properties', (done) ->
+        customProperties =
+          width: -1
+
+        layer.on 'data', (data) ->
+          expect(data.properties.width).to.equal customProperties.width
+          done()
+
+        start.send customProperties
