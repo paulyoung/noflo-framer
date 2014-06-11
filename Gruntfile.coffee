@@ -40,13 +40,6 @@ module.exports = ->
       files: ['spec/*.coffee', 'components/*.coffee']
       tasks: ['test']
 
-    # BDD tests on Node.js
-    cafemocha:
-      nodejs:
-        src: ['spec/*.coffee']
-        options:
-          reporter: 'spec'
-
     # BDD tests on browser
     mocha_phantomjs:
       options:
@@ -85,8 +78,6 @@ module.exports = ->
     @task.run 'coffeelint'
     @task.run 'coffee'
     @task.run 'noflo_manifest'
-    if target is 'all' or target is 'nodejs'
-      @task.run 'cafemocha'
     if target is 'all' or target is 'browser'
       @task.run 'noflo_browser'
       @task.run 'mocha_phantomjs'
