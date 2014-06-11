@@ -6,7 +6,6 @@ CreateLayer = require 'noflo-framer/components/CreateLayer.js'
 describe 'CreateLayer component', ->
   component = null
   start = null
-  properties = null
   layer = null
 
 
@@ -23,7 +22,7 @@ describe 'CreateLayer component', ->
   describe 'creating a layer', ->
     it 'should produce a new layer', (done) ->
       layer.on 'data', (data) ->
-        expect(data).to.be.instanceof Layer
+        expect(data).to.be.instanceof window.Layer
         done()
 
       start.send()
