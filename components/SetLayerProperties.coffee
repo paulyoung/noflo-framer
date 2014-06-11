@@ -7,7 +7,7 @@ createLayer = (properties) ->
 exports.getComponent = ->
   component = new noflo.Component
   component.description = 'Set layer properties.'
-  # component.icon = 'picture'
+  component.icon = 'cogs'
 
   # Add input ports
   component.inPorts.add 'in',
